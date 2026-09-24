@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Telkom EduAdmin - Master Screen Prototypes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body class="bg-[#F5F5F7] text-[#1b1c1c] antialiased">
+  <div class="max-w-md mx-auto min-h-screen bg-[#fbf9f8] shadow-2xl relative pb-28">
+    <!-- Top Navigation Switcher for Prototype Inspection -->
+    <div class="bg-[#b7000c] text-white px-3 py-2 text-xs flex items-center justify-between sticky top-0 z-50 shadow-md">
+      <span class="font-bold flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">school</span>
+        SMK Telkom Prototype
+      </span>
+      <div class="flex items-center gap-1 overflow-x-auto text-[11px]">
+        <button onclick="switchScreen('screen-siswa')" class="px-2 py-0.5 rounded bg-white/20 hover:bg-white/30">Siswa</button>
+        <button onclick="switchScreen('screen-guru')" class="px-2 py-0.5 rounded bg-white/20 hover:bg-white/30">Guru</button>
+        <button onclick="switchScreen('screen-dashboard')" class="px-2 py-0.5 rounded bg-white/20 hover:bg-white/30">Dashboard</button>
+        <button onclick="switchScreen('screen-berita')" class="px-2 py-0.5 rounded bg-white/20 hover:bg-white/30">Berita</button>
+      </div>
+    </div>
+
+    <!-- SCREEN 1: DATA SISWA & PRESENSI -->
+    <div id="screen-siswa" class="screen-view">
+      <!-- TOP APP BAR -->
+      <header class="bg-white/80 backdrop-blur-md sticky top-9 z-40 shadow-sm border-b border-[#e9bcb6]/30 flex justify-between items-center w-full px-4 h-14">
+        <div class="flex items-center gap-2">
+          <button class="w-9 h-9 rounded-full flex items-center justify-center hover:bg-[#eae8e7]">
+            <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+          </button>
+          <h1 class="text-[18px] font-bold tracking-tight">Data Siswa &amp; Presensi</h1>
+        </div>
+        <div class="flex items-center gap-1">
+          <button class="w-9 h-9 rounded-full flex items-center justify-center text-[#5f3f3b] hover:bg-[#eae8e7]">
+            <span class="material-symbols-outlined text-[20px]">tune</span>
+          </button>
+          <button class="w-9 h-9 rounded-full flex items-center justify-center text-[#5f3f3b] hover:bg-[#eae8e7]">
+            <span class="material-symbols-outlined text-[20px]">ios_share</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- ROMBEL STRIP -->
+      <section class="px-4 pt-3 pb-2">
+        <div class="bg-white border border-[#b7000c]/10 rounded-xl p-2.5 flex items-center justify-between shadow-sm">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-[#ffdad5] flex items-center justify-center text-[#b7000c]">
+              <span class="material-symbols-outlined text-[20px]">groups</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-1">
+                <span class="text-sm font-semibold text-[#1b1c1c]">XII RPL 1</span>
+                <span class="px-1.5 py-0.5 rounded-full text-[10px] font-bold bg-[#ffdad5] text-[#410001]">RPL</span>
+              </div>
+              <p class="text-xs text-[#5f3f3b]">Senin, 10 Maret 2025 • T.A 2024/2025</p>
+            </div>
+          </div>
+          <button class="flex items-center gap-1 text-[#b7000c] text-xs font-semibold px-2 py-1 rounded-lg bg-[#ffdad5]/50">
+            <span>Ganti</span>
+            <span class="material-symbols-outlined text-[16px]">expand_more</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- METRIC CARDS -->
+      <section class="px-4 py-2">
+        <div class="bg-white/90 backdrop-blur-md rounded-xl p-4 border border-[#b7000c]/10 shadow-sm">
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <span class="text-[11px] text-[#5f3f3b] uppercase tracking-wider font-semibold">Kehadiran Kelas</span>
+              <div class="flex items-baseline gap-1">
+                <span class="text-2xl font-bold text-[#1b1c1c]">91.6%</span>
+                <span class="text-xs text-[#5f3f3b]">Tercapai</span>
+              </div>
+            </div>
+            <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+              <span class="text-[11px] font-semibold text-emerald-800">Sesi Pagi Aktif</span>
+            </div>
+          </div>
+          <div class="w-full bg-[#eae8e7] h-2.5 rounded-full overflow-hidden flex mb-3">
+            <div class="bg-emerald-600 h-full rounded-l-full" style="width: 91.6%;"></div>
+            <div class="bg-amber-500 h-full" style="width: 5.6%;"></div>
+            <div class="bg-[#e60012] h-full rounded-r-full" style="width: 2.8%;"></div>
+          </div>
+          <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="bg-[#f5f3f3] rounded-lg p-2 flex flex-col items-center">
+              <span class="text-[11px] text-[#5f3f3b]">Total</span>
+              <span class="text-base font-bold text-[#1b1c1c] mt-0.5">36</span>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200/60 rounded-lg p-2 flex flex-col items-center">
+              <span class="text-[11px] font-semibold text-emerald-700">Hadir</span>
+              <span class="text-base font-bold text-emerald-800 mt-0.5">33</span>
+            </div>
+            <div class="bg-amber-50 border border-amber-200/60 rounded-lg p-2 flex flex-col items-center">
+              <span class="text-[11px] font-semibold text-amber-800">Izin/Skt</span>
+              <span class="text-base font-bold text-amber-900 mt-0.5">2</span>
+            </div>
+            <div class="bg-[#ffdad5] border border-[#b7000c]/20 rounded-lg p-2 flex flex-col items-center">
+              <span class="text-[11px] font-semibold text-[#b7000c]">Alpa</span>
+              <span class="text-base font-bold text-[#b7000c] mt-0.5">1</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH & FILTER -->
+      <section class="px-4 py-2 space-y-2">
+        <div class="relative flex items-center">
+          <span class="material-symbols-outlined absolute left-3.5 text-[20px] text-[#5f3f3b]">search</span>
+          <input class="w-full h-11 pl-10 pr-10 text-sm rounded-xl bg-white border border-[#e9bcb6]/40 focus:outline-none" placeholder="Cari NISN, nama siswa..." type="text"/>
+          <button class="absolute right-3 text-[#5f3f3b]">
+            <span class="material-symbols-outlined text-[18px]">qr_code_scanner</span>
+          </button>
+        </div>
+        <div class="flex items-center justify-between gap-2">
+          <button class="flex-1 flex items-center justify-center gap-1.5 h-9 rounded-lg bg-white border border-[#e9bcb6]/40 text-xs font-semibold shadow-sm">
+            <span class="material-symbols-outlined text-[16px] text-emerald-700">done_all</span>
+            <span>Tandai Semua Hadir</span>
+          </button>
+          <button class="flex-1 flex items-center justify-center gap-1.5 h-9 rounded-lg bg-white border border-[#e9bcb6]/40 text-xs font-semibold shadow-sm">
+            <span class="material-symbols-outlined text-[16px] text-[#b7000c]">qr_code</span>
+            <span>Mode Scan QR</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- STUDENT CARDS (Sample) -->
+      <main class="px-4 space-y-2.5 pb-4">
+        <!-- Ahmad Fauzi -->
+        <div onclick="openStudentModal()" class="bg-white rounded-xl p-3.5 border border-[#b7000c]/10 shadow-sm cursor-pointer hover:shadow-md transition-all">
+          <div class="flex items-start justify-between">
+            <div class="flex items-start gap-3">
+              <div class="relative shrink-0">
+                <img class="w-12 h-12 rounded-xl object-cover border border-[#e9bcb6]/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPEp77O5FgOAR0Vytmso87_Y454xyOKUA0KhjXhvswQfkam9qws2ysVs8jNaJSlbyj7LqjkW5D-yi34IOymvY71XT3B7YBs1CIV5e0dkI_iJ3Clh_H7X5AKOHgtnM66zXS6Ru24DT2ZecdnSvOGaU8yp0Ve4qimm9aKV3YcFDba3STE6MHLJP36Y1pVU7RpoNRnYL0bZuZWjzc-JhwRfgLHpkSCe6kyNgoJOdphgBcKgZTSGPEzYs1A" alt="Ahmad Fauzi"/>
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white text-[10px]">✓</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h2 class="text-sm font-bold text-[#1b1c1c]">Ahmad Fauzi</h2>
+                  <span class="text-xs text-[#5f3f3b]">#01</span>
+                </div>
+                <p class="text-xs text-[#5f3f3b]">NISN: 0068492011 • XII RPL 1</p>
+                <div class="flex items-center gap-1 mt-1 text-[11px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md inline-flex font-semibold">
+                  <span class="material-symbols-outlined text-[14px]">access_time</span>
+                  <span>06.42 WIB • Gerbang Utama</span>
+                </div>
+              </div>
+            </div>
+            <button class="text-[#5f3f3b] p-1"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-[#efeded] flex items-center justify-between" onclick="event.stopPropagation()">
+            <span class="text-xs text-[#5f3f3b]">Status Presensi:</span>
+            <div class="attendance-btn-group flex items-center gap-1 bg-[#f5f3f3] p-1 rounded-lg">
+              <button data-status="H" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-bold bg-emerald-600 text-white shadow-sm">H</button>
+              <button data-status="S" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b] hover:bg-[#efeded]">S</button>
+              <button data-status="I" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b] hover:bg-[#efeded]">I</button>
+              <button data-status="A" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b] hover:bg-[#efeded]">A</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clarissa Amanda -->
+        <div class="bg-white rounded-xl p-3.5 border border-[#b7000c]/10 shadow-sm">
+          <div class="flex items-start justify-between">
+            <div class="flex items-start gap-3">
+              <div class="relative shrink-0">
+                <img class="w-12 h-12 rounded-xl object-cover border border-[#e9bcb6]/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJqPkzjIuhGUjyQWEKLaS_3WuYFPnqBLYAxc9Cx3A0q6d_fRdtYXfKz7GxO7vN1rwtLax8nj8eqx0b7bVLW9OEF8vYmXGHJYi8Uj6wngivswoTcSNZ5J7VZeynUNDIHIwTotq66UmOQR1hRFj0ygvLTGI3Yj33yaQJ64WtV6yKP7r4EA0nBLtEYQIgipDWUtlneqtWjmWUrh4YPM2QbrmYQCc_0GYolfSDI5VFmPvVeBnqly3YwI0aEQ" alt="Clarissa Amanda"/>
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-amber-500 border-2 border-white flex items-center justify-center text-white text-[10px]">🩺</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-1.5">
+                  <h2 class="text-sm font-bold text-[#1b1c1c]">Clarissa Amanda</h2>
+                  <span class="text-xs text-[#5f3f3b]">#02</span>
+                </div>
+                <p class="text-xs text-[#5f3f3b]">NISN: 0067182903 • XII RPL 1</p>
+                <div class="flex items-center gap-1 mt-1 text-[11px] text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md inline-flex font-semibold">
+                  <span class="material-symbols-outlined text-[14px]">description</span>
+                  <span>Surat Dokter Terlampir</span>
+                </div>
+              </div>
+            </div>
+            <button class="text-[#5f3f3b] p-1"><span class="material-symbols-outlined text-[20px]">more_vert</span></button>
+          </div>
+          <div class="mt-3 pt-2.5 border-t border-[#efeded] flex items-center justify-between">
+            <span class="text-xs text-[#5f3f3b]">Status Presensi:</span>
+            <div class="attendance-btn-group flex items-center gap-1 bg-[#f5f3f3] p-1 rounded-lg">
+              <button data-status="H" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b]">H</button>
+              <button data-status="S" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-bold bg-amber-500 text-white shadow-sm">S</button>
+              <button data-status="I" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b]">I</button>
+              <button data-status="A" class="w-8 h-8 rounded-md text-xs flex items-center justify-center font-semibold text-[#5f3f3b]">A</button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- BOTTOM SHEET MODAL: DETAIL SISWA (AHMAD FAUZI) -->
+    <div id="student-modal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex flex-col justify-end">
+      <div class="bg-white rounded-t-3xl p-4 max-h-[85vh] overflow-y-auto border-t border-[#e9bcb6]/30">
+        <div class="w-12 h-1.5 rounded-full bg-[#e4e2e2] mx-auto mb-3"></div>
+        <div class="flex items-center justify-between pb-3 border-b">
+          <div class="flex items-center gap-3">
+            <img class="w-14 h-14 rounded-2xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPEp77O5FgOAR0Vytmso87_Y454xyOKUA0KhjXhvswQfkam9qws2ysVs8jNaJSlbyj7LqjkW5D-yi34IOymvY71XT3B7YBs1CIV5e0dkI_iJ3Clh_H7X5AKOHgtnM66zXS6Ru24DT2ZecdnSvOGaU8yp0Ve4qimm9aKV3YcFDba3STE6MHLJP36Y1pVU7RpoNRnYL0bZuZWjzc-JhwRfgLHpkSCe6kyNgoJOdphgBcKgZTSGPEzYs1A" alt="Ahmad Fauzi"/>
+            <div>
+              <h3 class="text-base font-bold">Ahmad Fauzi #01</h3>
+              <p class="text-xs text-[#5f3f3b]">NISN: 0068492011 • XII RPL 1</p>
+              <span class="inline-block mt-1 text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded">Hadir Tepat Waktu (06.42 WIB)</span>
+            </div>
+          </div>
+          <button onclick="closeStudentModal()" class="w-8 h-8 rounded-full bg-[#f5f3f3] flex items-center justify-center text-[#5f3f3b]">✕</button>
+        </div>
+
+        <div class="grid grid-cols-4 gap-2 my-3 text-center">
+          <div class="p-2 bg-[#f5f3f3] rounded-lg">
+            <span class="text-[10px] text-[#5f3f3b]">Persentase</span>
+            <div class="font-bold text-emerald-700 text-sm">97.5%</div>
+          </div>
+          <div class="p-2 bg-[#f5f3f3] rounded-lg">
+            <span class="text-[10px] text-[#5f3f3b]">Total Hadir</span>
+            <div class="font-bold text-sm">78 Hari</div>
+          </div>
+          <div class="p-2 bg-[#f5f3f3] rounded-lg">
+            <span class="text-[10px] text-[#5f3f3b]">Sakit/Izin</span>
+            <div class="font-bold text-amber-800 text-sm">2 Hari</div>
+          </div>
+          <div class="p-2 bg-[#f5f3f3] rounded-lg">
+            <span class="text-[10px] text-[#5f3f3b]">Alpa</span>
+            <div class="font-bold text-[#b7000c] text-sm">0 Hari</div>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <h4 class="text-xs font-bold text-[#1b1c1c]">Riwayat Presensi (7 Hari Terakhir)</h4>
+          <div class="text-xs border rounded-xl divide-y">
+            <div class="p-2 flex justify-between items-center">
+              <span>Senin, 10 Mar 2025 (06.42 WIB)</span>
+              <span class="text-emerald-700 font-bold">Hadir</span>
+            </div>
+            <div class="p-2 flex justify-between items-center">
+              <span>Jumat, 07 Mar 2025 (06.38 WIB)</span>
+              <span class="text-emerald-700 font-bold">Hadir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-2 mt-4 pt-3 border-t">
+          <button class="flex-1 py-2.5 rounded-xl border text-xs font-semibold">Hubungi Ortu</button>
+          <button class="flex-1 py-2.5 rounded-xl bg-[#b7000c] text-white text-xs font-semibold">Ubah Status</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bg-white/90 backdrop-blur-lg fixed bottom-0 left-0 right-0 max-w-md mx-auto z-40 border-t border-[#e9bcb6]/30 flex justify-around py-2">
+      <a href="#" onclick="switchScreen('screen-dashboard')" class="flex flex-col items-center text-[#5f3f3b] text-[11px]">
+        <span class="material-symbols-outlined text-[22px]">dashboard</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" onclick="switchScreen('screen-siswa')" class="flex flex-col items-center text-[#b7000c] font-bold text-[11px]">
+        <span class="material-symbols-outlined text-[22px]">school</span>
+        <span>Siswa</span>
+      </a>
+      <a href="#" onclick="switchScreen('screen-guru')" class="flex flex-col items-center text-[#5f3f3b] text-[11px]">
+        <span class="material-symbols-outlined text-[22px]">person_apron</span>
+        <span>Guru</span>
+      </a>
+      <a href="#" onclick="switchScreen('screen-berita')" class="flex flex-col items-center text-[#5f3f3b] text-[11px]">
+        <span class="material-symbols-outlined text-[22px]">menu</span>
+        <span>Menu</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="./script.js"></script>
+  <script>
+    function switchScreen(id) {
+      document.querySelectorAll('.screen-view').forEach(s => s.classList.add('hidden'));
+      const sc = document.getElementById(id);
+      if (sc) sc.classList.remove('hidden');
+    }
+    function openStudentModal() {
+      document.getElementById('student-modal').classList.remove('hidden');
+    }
+    function closeStudentModal() {
+      document.getElementById('student-modal').classList.add('hidden');
+    }
+  </script>
+</body>
+</html>

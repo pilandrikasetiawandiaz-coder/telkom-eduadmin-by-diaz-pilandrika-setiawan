@@ -1,0 +1,6 @@
+{
+  "name": "Telkom EduAdmin - Presensi & Akademik",
+  "description": "Sistem Manajemen Siswa, Presensi Guru & Staf, dan Pengumuman Akademik SMK Telkom",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
